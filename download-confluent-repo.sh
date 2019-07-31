@@ -4,7 +4,7 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 PACKAGE=$(basename -- $0)
-
+CLEANUP=true
 while test $# -gt 0; do
   case "$1" in
     -h|--help)
@@ -74,7 +74,7 @@ fi
 # so we can provide the canonical path that Docker requires
 case ${DOWNLOAD_DIR} in
     /*) ;;
-    ./*) ;;
+    ./*) export DOWNLOAD_DIR=${DIR}/$(basename -- ${DOWNLOAD_DIR});;
     *) export DOWNLOAD_DIR=${DIR}/${DOWNLOAD_DIR} ;;
 esac
 
@@ -85,7 +85,7 @@ DOCKER_CONTAINER_NAME=confluent-reposync
 # echo "CP_VERSION: ${CP_VERSION}"
 # echo "DOWNLOAD_DIR: ${DOWNLOAD_DIR}"
 # echo "CLEANUP: ${CLEANUP}"
-# exit 1
+#  exit 1
 
 # BUILD
 ${docker} build --build-arg CONFLUENT_VERSION=${CP_VERSION} -t ${DOCKER_CONTAINER_NAME} ${DIR} && \
