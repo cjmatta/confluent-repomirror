@@ -20,14 +20,14 @@ RUN bash -c 'echo -e "[Confluent.dist]\n\
 name=Confluent repository (dist)\n\
 baseurl= https://packages.confluent.io/rpm/${CONFLUENT_VERSION}/7\n\
 gpgcheck=1\n\
-gpgkey=https://packages.confluent.io/rpm/${CONFLUENT_VERSION}/7/archive.key\n\
+gpgkey=https://packages.confluent.io/rpm/${CONFLUENT_VERSION}/archive.key\n\
 enabled=1\n\
 \n\
 [Confluent] \n\
 name=Confluent repository \n\
-baseurl= https://packages.confluent.io/rpm/${CONFLUENT_VERSION}/7\n\
+baseurl= https://packages.confluent.io/rpm/${CONFLUENT_VERSION}\n\
 gpgcheck=1 \n\
-gpgkey=https://packages.confluent.io/rpm/${CONFLUENT_VERSION}/7/archive.key\n\
+gpgkey=https://packages.confluent.io/rpm/${CONFLUENT_VERSION}/archive.key\n\
 enabled=1 " > /etc/yum.repos.d/confluent.repo';
 
 RUN yum clean all
