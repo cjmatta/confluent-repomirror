@@ -13,7 +13,7 @@ while test $# -gt 0; do
       echo "${PACKAGE} [options]"
       echo "options:"
       echo "-h, --help      show help"
-      echo "-v              Confluent version, defaults to 5.3"
+      echo "-v              Confluent version, defaults to 6.0"
       echo "-d              Directory to download the repository to, defaults to ./confluent-<version>"
       echo "--no-cleanup    Don't remove the created docker image, by default this script cleans up after itself"
       echo ""
@@ -63,7 +63,7 @@ if [[ ! -x "${docker}" ]]; then
 fi
 
 if [[ "x${CP_VERSION}" == "x" ]]; then
-    CP_VERSION=5.3
+    CP_VERSION=6.0
 fi
 
 if [[ "x${DOWNLOAD_DIR}" == "x" ]]; then
