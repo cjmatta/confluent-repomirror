@@ -1,5 +1,5 @@
 # confluent-repomirror
-Download the Confluent Platform RPMs using Yum reposync on a Docker container"
+Download the Confluent Platform RPMs using Yum reposync on a Docker container
 
 ## Requirements
 * An installtion of Docker
