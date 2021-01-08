@@ -13,7 +13,7 @@ All arguments are optional.
 
 ```
 -h, --help      show help
--v              Confluent version, defaults to 5.3
+-v              Confluent version, defaults to 6.0
 -d              Directory to download the repository to, defaults to ./confluent-<version>
 --no-cleanup    Don't remove the created docker image, by default this script cleans up after itself
 ````
